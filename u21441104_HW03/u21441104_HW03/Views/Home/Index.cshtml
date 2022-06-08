@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<h2>myMedia</h2>
+<h5>Something Something foo foo</h5>
+
+<div class="container" style="background-color:lightgrey; padding: .5%;">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Description</h3>
+
+            <p>
+                This is a file storing system that will allow the user to store documents, images and videos.
+                This website will allow the user to view images and videos that they have uplaoded in the files tab as well as the videos tap and the images tab.
+                The website shoould allow the users to download files onto their computer and should allow the users to delete unwanted files off of the website.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <h3>Option Selection</h3>
+
+            <h2>@ViewBag.a</h2>
+
+
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+
+                <label for="rbDoc">Document</label>
+                <input type="radio" name="rbSelection" value="doc" />
+                <br />
+                <label for="rbImg">Image</label>
+                <input type="radio" name="rbSelection" value="img" />
+                <br />
+                <label for="rbVid">Video</label>
+                <input type="radio" name="rbSelection" value="vid" />
+                <br /><br />
+
+
+
+                <div><input type="file" name="files" /></div>
+                <br />
+                <div><input type="submit" value="Upload" /></div>
+            }
+
+
+        </div>
+    </div>
+
+</div>
